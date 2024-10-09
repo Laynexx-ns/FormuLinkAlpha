@@ -16,7 +16,7 @@ const FormulaDetails = ({formula}) => {
 
     return (
         <Card
-            title={<Typography.Title level={4}>{formulaName}</Typography.Title>}
+            title={<Typography.Title level={4}>Формула силы</Typography.Title>}
             bordered={false}
             style={{
                 margin: "1%",
@@ -28,14 +28,15 @@ const FormulaDetails = ({formula}) => {
         >
             <Typography.Text strong>Формула:</Typography.Text>
             <Typography.Title level={5} style={{marginTop: "10px"}}>
-                {formulaExpression}
+            {/*    formulaExpression*/}
+                F = ma
             </Typography.Title>
 
             <Divider/>
 
             <Typography.Text strong>Описание:</Typography.Text>
             <Typography.Paragraph style={{marginTop: "10px"}}>
-                {formulaDescription}
+                Сила - ньютоны, масса - килограмы, а - ускорение
             </Typography.Paragraph>
         </Card>
     );
