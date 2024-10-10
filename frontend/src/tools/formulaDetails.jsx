@@ -1,34 +1,36 @@
-import {useEffect, useState} from "react";
-import {Button, Card, Divider, Typography} from "antd";
-import {GetFormulaDescription, GetDefaultPhysFormula, GetFormulaName, GetFormulaExpression} from "../../wailsjs/go/main/App.js";
-import invoke  from '@wailsapp/runtime'
+import { useEffect, useState } from "react";
+import { Button, Card, Divider, Typography } from "antd";
+import { GetFormulaDescription, GetFormulaName, GetFormulaExpression } from "../../wailsjs/go/main/App.js";
 
-const FormulaDetails = ({formula}) => {
+const FormulaDetails = ({ formula }) => {  // Принимаем пропс formula
 
-    const [formulaName, setFormulaName] = useState("__")
+    const [formulaName, setFormulaName] = useState("__");
     const [formulaDescription, setFormulaDescription] = useState("__");
-    const [formulaExpression, setFormulaExpression] = useState("__")
+    const [formulaExpression, setFormulaExpression] = useState("__");
 
+    useEffect(() => {
+        const fetchDescription = async () => {
+            if (formula) {
+                try {
+                    const description = await GetFormulaDescription(formula);
+                    setFormulaDescription(description);
 
-    // Функция для вызова Go метода (предполагаю, что invoke используется для вызова Go функций)
-    const fetchDescription = async () => {
-        try {
-            const description = await GetFormulaDescription(formula);
-            setFormulaDescription(description);
-            const name = await GetFormulaName(formula);
-            setFormulaName(name)
-            const expression = await GetFormulaExpression(formula);
-            setFormulaExpression(expression)
+                    const name = await GetFormulaName(formula);
+                    setFormulaName(name);
 
-        } catch (error) {
-            console.error("Ошибка при получении описания:", error);
-        }
-    };
-
+                    const expression = await GetFormulaExpression(formula);
+                    setFormulaExpression(expression);
+                } catch (error) {
+                    console.error("Ошибка при получении описания:", error);
+                }
+            }
+        };
+        fetchDescription();
+    }, [formula]);
 
     return (
         <Card
-            title={<Typography.Title level={3}>Формула силы</Typography.Title>}
+            title={<Typography.Title level={3}>{formulaName}</Typography.Title>}
             bordered={true}
             style={{
                 margin: "10px",
@@ -38,17 +40,13 @@ const FormulaDetails = ({formula}) => {
                 backgroundColor: "#f9f9f9"
             }}
         >
-            <Typography.Text strong>Формула:</Typography.Text>
-            <Typography.Title level={4} style={{marginTop: "1px"}}>
+            <Typography.Text> Формула:</Typography.Text>
+            <Typography.Title level={4} style={{ marginTop: "1px" }}>
                 {formulaExpression}
             </Typography.Title>
-
-            <Divider/>
-            <Button type={"primary"} onClick={fetchDescription} style={{margin: "10px", width: "400px", backgroundColor: "#b376b8"}}>
-                Описание
-            </Button>
-            <Typography.Text strong>Описание:</Typography.Text>
-            <Typography.Paragraph style={{marginTop: "1px"}}>
+            <Divider />
+            <Typography.Text> Описание: </Typography.Text>
+            <Typography.Paragraph style={{ marginTop: "1px" }}>
                 {formulaDescription}
             </Typography.Paragraph>
         </Card>
@@ -56,4 +54,3 @@ const FormulaDetails = ({formula}) => {
 };
 
 export default FormulaDetails;
-

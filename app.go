@@ -22,11 +22,11 @@ func (a *App) startup(ctx context.Context) {
 
 }
 
-func (a *App) GetDefaultPhysFormula() []formulas.Formula {
+func (a *App) GetPhysFormulas() []formulas.Formula {
 	return formulas.PhysicFormulas
 }
 
-func (a *App) GetDefaultMathFormula() []formulas.Formula {
+func (a *App) GetMathFormulas() []formulas.Formula {
 	return formulas.PhysicFormulas
 }
 
@@ -48,4 +48,12 @@ func (a *App) GetTestFuncDescription() string {
 
 func (a *App) GetPhysFormulaByIndex(i int) formulas.Formula {
 	return formulas.PhysicFormulas[i]
+}
+
+func (a *App) GetMathFormulasCount() int {
+	return len(formulas.MathFormulas)
+}
+
+func (a *App) GetPhysFormulasCount() int {
+	return len(formulas.PhysicFormulas)
 }
