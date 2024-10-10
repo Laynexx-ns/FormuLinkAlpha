@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@wailsapp/runtime": "^1.1.1",
     "antd": "^5.21.2",
     "better-react-mathjax": "^2.0.3"
   }

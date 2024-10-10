@@ -41,3 +41,11 @@ func (a *App) GetFormulaDescription(formula formulas.Formula) string {
 func (a *App) GetFormulaExpression(formula formulas.Formula) string {
 	return formula.Expression
 }
+
+func (a *App) GetTestFuncDescription() string {
+	return "it's working - description"
+}
+
+func (a *App) GetPhysFormulaByIndex(i int) formulas.Formula {
+	return formulas.PhysicFormulas[i]
+}

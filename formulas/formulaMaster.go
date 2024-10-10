@@ -1,7 +1,7 @@
 package formulas
 
 type Formula struct {
-	Name        string
-	Expression  string
-	Description string
+	Name        string `json:"name"`
+	Expression  string `json:"expression"`
+	Description string `json:"description"`
 }

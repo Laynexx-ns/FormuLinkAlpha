@@ -1,9 +1,9 @@
 export namespace formulas {
 	
 	export class Formula {
-	    Name: string;
-	    Expression: string;
-	    Description: string;
+	    name: string;
+	    expression: string;
+	    description: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new Formula(source);
@@ -11,9 +11,9 @@ export namespace formulas {
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
-	        this.Name = source["Name"];
-	        this.Expression = source["Expression"];
-	        this.Description = source["Description"];
+	        this.name = source["name"];
+	        this.expression = source["expression"];
+	        this.description = source["description"];
 	    }
 	}
 

@@ -11,3 +11,7 @@ export function GetFormulaDescription(arg1:formulas.Formula):Promise<string>;
 export function GetFormulaExpression(arg1:formulas.Formula):Promise<string>;
 
 export function GetFormulaName(arg1:formulas.Formula):Promise<string>;
+
+export function GetPhysFormulaByIndex(arg1:number):Promise<formulas.Formula>;
+
+export function GetTestFuncDescription():Promise<string>;

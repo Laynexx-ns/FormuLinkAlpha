@@ -21,3 +21,11 @@ export function GetFormulaExpression(arg1) {
 export function GetFormulaName(arg1) {
   return window['go']['main']['App']['GetFormulaName'](arg1);
 }
+
+export function GetPhysFormulaByIndex(arg1) {
+  return window['go']['main']['App']['GetPhysFormulaByIndex'](arg1);
+}
+
+export function GetTestFuncDescription() {
+  return window['go']['main']['App']['GetTestFuncDescription']();
+}
