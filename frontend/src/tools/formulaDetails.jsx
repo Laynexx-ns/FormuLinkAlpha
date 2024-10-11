@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Divider, Typography } from "antd";
 import { GetFormulaDescription, GetFormulaName, GetFormulaExpression } from "../../wailsjs/go/main/App.js";
+import {LogPrint} from "../../wailsjs/runtime/runtime.js";
 
 const FormulaDetails = ({ formula }) => {  // Принимаем пропс formula
 
@@ -21,7 +22,7 @@ const FormulaDetails = ({ formula }) => {  // Принимаем пропс form
                     const expression = await GetFormulaExpression(formula);
                     setFormulaExpression(expression);
                 } catch (error) {
-                    console.error("Ошибка при получении описания:", error);
+                    LogPrint("Ошибка при получении описания:", error);
                 }
             }
         };
@@ -37,7 +38,7 @@ const FormulaDetails = ({ formula }) => {  // Принимаем пропс form
                 border: "1px solid #f0f0f0",
                 borderRadius: "40px",
                 padding: "10px",
-                backgroundColor: "#f9f9f9"
+                backgroundColor: "#e35858"
             }}
         >
             <Typography.Text> Формула:</Typography.Text>

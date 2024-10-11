@@ -50,6 +50,10 @@ func (a *App) GetPhysFormulaByIndex(i int) formulas.Formula {
 	return formulas.PhysicFormulas[i]
 }
 
+func (a *App) GetMathFormulaByIndex(i int) formulas.Formula {
+	return formulas.MathFormulas[i]
+}
+
 func (a *App) GetMathFormulasCount() int {
 	return len(formulas.MathFormulas)
 }

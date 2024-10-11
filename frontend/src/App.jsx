@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {Card, Divider, List, Typography} from "antd";
 import {GetDefaultPhysFormula, GetDefaultMathFormula, GetTestFuncDescription} from "../wailsjs/go/main/App.js";
 import MathFormulasFrontend from "./formulasFrontend/mathFormulasFrontend.jsx";
+import PhysFormulasFrontend from "./formulasFrontend/physFormulasFrontend.jsx";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
             <Typography.Title level={5} style={{ margin: 10, marginTop: 30 }}>
                 Physics Formulas:
             </Typography.Title>
-            <MathFormulasFrontend/>
+            <PhysFormulasFrontend/>
 
         </div>
     );

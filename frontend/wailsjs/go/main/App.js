@@ -14,6 +14,10 @@ export function GetFormulaName(arg1) {
   return window['go']['main']['App']['GetFormulaName'](arg1);
 }
 
+export function GetMathFormulaByIndex(arg1) {
+  return window['go']['main']['App']['GetMathFormulaByIndex'](arg1);
+}
+
 export function GetMathFormulas() {
   return window['go']['main']['App']['GetMathFormulas']();
 }

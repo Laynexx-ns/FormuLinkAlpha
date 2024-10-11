@@ -8,6 +8,8 @@ export function GetFormulaExpression(arg1:formulas.Formula):Promise<string>;
 
 export function GetFormulaName(arg1:formulas.Formula):Promise<string>;
 
+export function GetMathFormulaByIndex(arg1:number):Promise<formulas.Formula>;
+
 export function GetMathFormulas():Promise<Array<formulas.Formula>>;
 
 export function GetMathFormulasCount():Promise<number>;

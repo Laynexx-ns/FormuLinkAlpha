@@ -7,6 +7,7 @@ import FormulaDetails from "../tools/formulaDetails.jsx";
 import invoke from '@wailsapp/runtime';
 import {useEffect, useState} from "react";
 import {Divider, List} from "antd";
+import {LogPrint} from "../../wailsjs/runtime/runtime.js";
 
 const MathFormulasFrontend = () => {
 
@@ -16,10 +17,10 @@ const MathFormulasFrontend = () => {
         const fetchPhysFormula = async (index) => {
 
             try {
-                const result = await GetPhysFormulaByIndex(1); // Вызов Go функции
+                const result = await GetPhysFormulaByIndex(0); // Вызов Go функции
                 setFormula(result);  // Устанавливаем результат в состояние
             } catch (error) {
-                console.error('Ошибка при получении формулы:', error);
+                LogPrint('Ошибка при получении формулы:', error);
             }}
         fetchPhysFormula();
     }, [])
