@@ -38,7 +38,7 @@ const FormulaDetails = ({ formula }) => {  // Принимаем пропс form
                 border: "1px solid #f0f0f0",
                 borderRadius: "40px",
                 padding: "10px",
-                backgroundColor: "#e35858"
+                backgroundColor: "#f3f3f3"
             }}
         >
             <Typography.Text> Формула:</Typography.Text>
